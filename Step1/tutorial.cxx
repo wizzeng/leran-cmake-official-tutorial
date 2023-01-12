@@ -13,7 +13,9 @@ int main(int argc, char* argv[])
   if (argc < 2) {
     // 12: Create a print statement using Tutorial_VERSION_MAJOR
     //          and Tutorial_VERSION_MINOR
-    std::cout << "Version: " << Tutorial_VERSION_MAJOR << "." << Tutorial_VERSION_MINOR << std::endl;
+    std::cout << "Version: " << Tutorial_VERSION_MAJOR 
+    << "." << Tutorial_VERSION_MINOR
+    << ", HomePage: " << Tutorial_HOME_PAGE << std::endl;
     std::cout << "Usage: " << argv[0] << " number" << std::endl;
     return 1;
   }
