@@ -5,13 +5,18 @@
 
 #include "TutorialConfig.h"
 
-// TODO 11: Only include MathFunctions if USE_MYMATH is defined
+// 11: Only include MathFunctions if USE_MYMATH is defined
+#ifdef USE_MYMATH
 
-// TODO 5: Include MathFunctions.h
+// 5: Include MathFunctions.h
+#include "MathFunctions.h"
 
-int main(int argc, char* argv[])
+#endif
+
+int main(int argc, char *argv[])
 {
-  if (argc < 2) {
+  if (argc < 2)
+  {
     // report version
     std::cout << argv[0] << " Version " << Tutorial_VERSION_MAJOR << "."
               << Tutorial_VERSION_MINOR << std::endl;
@@ -22,12 +27,16 @@ int main(int argc, char* argv[])
   // convert input to double
   const double inputValue = std::stod(argv[1]);
 
-  // TODO 12: Use mysqrt if USE_MYMATH is defined and sqrt otherwise
+  // 12: Use mysqrt if USE_MYMATH is defined and sqrt otherwise
 
-  // TODO 6: Replace sqrt with mysqrt
+  // 6: Replace sqrt with mysqrt
 
+#ifdef USE_MYMATH
+  const double outputValue = mysqrt(inputValue);
+#else
   // calculate square root
   const double outputValue = sqrt(inputValue);
+#endif
   std::cout << "The square root of " << inputValue << " is " << outputValue
             << std::endl;
   return 0;
